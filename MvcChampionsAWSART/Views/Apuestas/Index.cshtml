@@ -1,0 +1,61 @@
+﻿@model IEnumerable<MvcChampionsAWSART.Models.Apuesta>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create" asp-controller="Apuestas">Create Apuesta</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdApuesta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Usuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdEquipoLocal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdEquipoVisitante)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GolesEquipoLocal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GolesEquipoVisitante)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdApuesta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Usuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdEquipoLocal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdEquipoVisitante)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GolesEquipoLocal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GolesEquipoVisitante)
+            </td>
+           
+        </tr>
+}
+    </tbody>
+</table>

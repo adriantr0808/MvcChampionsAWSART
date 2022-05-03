@@ -1,0 +1,55 @@
+﻿@model IEnumerable<MvcChampionsAWSART.Models.Jugador>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Jugadores</h1>
+
+<p>
+    <a asp-action="Create" asp-controller="Jugadores">Crear Jugador</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id_Jugador)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Posicion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Imagen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Id_Equipo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id_Jugador)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Posicion)
+            </td>
+            <td>
+               <img src="@item.Imagen" width="140" height="200"/>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id_Equipo)
+            </td>
+            
+        </tr>
+}
+    </tbody>
+</table>
